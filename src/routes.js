@@ -23,5 +23,4 @@ routes.get('/incident', incidentController.list)
 routes.post('/incident', incidentController.store);
 routes.delete('/incident/:id', incidentController.delete)
 
-
 module.exports = routes;
