@@ -1,4 +1,4 @@
-const crypto = require('crypto'); // pacote de criptografia que vem junto como node
+const generateUniqueId = require('../utils/generateUniqueId')
 const connection = require('../database/connection');
 
 module.exports = {
@@ -8,8 +8,8 @@ module.exports = {
         } = request.body;
       
         // CRIAÇÃO DE UMA STRING ALEATÓRIA PARA O ID
-        const id = crypto.randomBytes(4).toString('HEX');
-      
+        const id = generateUniqueId();
+
         await connection('ongs').insert({
           id, name, email, whatsapp, city, uf,
         });
